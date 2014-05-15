@@ -26,10 +26,10 @@ for t in "${filecontent[@]}"
 ####
 do
 ####
-mkdir $t.temp
-cp $t $t.temp/
-cp *.R $t.temp/
-cd $t.temp
+##mkdir $t.temp
+##cp $t $t.temp/
+##cp *.R $t.temp/
+##cd $t.temp
 
 #gsutil -m cp $t .
 ###
@@ -60,7 +60,7 @@ echo "#################################"
 echo "nexone"
 echo "#################################"
 
-cd ..
+##cd ..
 
 ###
 done
@@ -71,7 +71,11 @@ done
 #mv data "$Name"
 #gsutil -m cp "$Name" gs://swapmeet
 
-gsutil -m cp -R *.temp gs://swapmeet
+
+mv data PubChemROF_data
+mv run-50-40 PubChemROF_runs
+
+gsutil -m cp -R PubChemROF_* gs://swapmeet
 
 echo "#################################"
 echo "All is done"
