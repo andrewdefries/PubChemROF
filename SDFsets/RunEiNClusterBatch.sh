@@ -1,4 +1,6 @@
 #####
+rm -r data
+rm -r run-*
 rm RunLog
 
 #####
@@ -18,13 +20,13 @@ rm RunLog
 
 #1  236  471  706  941 1176 1411 1646 1881 2116 2351 2586
 
-ls *.sdf > WorkList
+##ls *.sdf > WorkList
 ####
-filecontent=(`cat "WorkList"`)
+##filecontent=(`cat "WorkList"`)
 ####
-for t in "${filecontent[@]}"
+##for t in "${filecontent[@]}"
 ####
-do
+##do
 ####
 ##mkdir $t.temp
 ##cp $t $t.temp/
@@ -51,19 +53,15 @@ rm *.Rout
 
 echo "#################################"
 echo "#################################"
-#echo "$t is done w gsutil cp"
 echo "#################################"
+echo "#########done####################"
 echo "#################################"
-##
-
-echo "#################################"
-echo "nexone"
 echo "#################################"
 
 ##cd ..
 
 ###
-done
+#done
 ####
 #####
 #ls *.sdf | sed 's/\.sdf/_eiR/g' > Out

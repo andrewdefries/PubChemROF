@@ -9,6 +9,13 @@ sdfset<-sdfset[-which(sapply(as(apset, "list"), length)==1)]
 Ei<-function(f){
 eiInit(files[f])
 ##################
+}
+##################
+f<-1:length(files)
+lapply(f, Ei)
+
+
+#################
 r<-50
 d<-40
 ##################
@@ -16,9 +23,5 @@ refIddb<-eiMakeDb(r,d)
 ##
 cluster_index <- eiCluster(r,d,5,minNbrs=2,cutoff=0.5,dir=getwd())
 ##
-save(cluster_index, file=gsub(".sdf", "_ClusterIndex.rda", files[f]), compress=T)
-}
-##################
-f<-1:length(files)
-lapply(f, Ei)
-
+save(cluster_index, file="ClusterIndex.rda", compress=T)
+#################
